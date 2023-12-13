@@ -1,5 +1,6 @@
 <script setup>
-import Home from './components/views/Home.vue'
+import Home from "./components/views/Home.vue";
+import Footer from "./components/common/Footer.vue";
 </script>
 
 <template>
@@ -8,7 +9,9 @@ import Home from './components/views/Home.vue'
     <el-main>
       <Home />
     </el-main>
-    <el-footer>Footer</el-footer>
+    <el-footer>
+      <Footer />
+    </el-footer>
   </el-container>
 </template>
 
@@ -23,7 +26,7 @@ el-header,
 el-footer {
   color: white;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 el-main {

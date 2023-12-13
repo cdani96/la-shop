@@ -9,25 +9,32 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  'onUpdate:modelValue': {
+  "onUpdate:modelValue": {
     type: Function,
     required: true,
   },
 });
 
-
-const { product, modelValue, 'onUpdate:modelValue': updateModelValue } = toRefs(props)
+const {
+  product,
+  modelValue,
+  "onUpdate:modelValue": updateModelValue,
+} = toRefs(props);
 
 const selected = computed({
   get: () => modelValue.value,
   set: (value) => updateModelValue.value(value),
-})
-
+});
 </script>
 <template>
   <section class="product-grid">
     <el-card class="product-card" shadow="hover">
-      <el-image :src="product.image" fit="cover" class="product-image"></el-image>
+      <el-image
+        :src="product.image"
+        loading="lazy"
+        fit="cover"
+        class="product-image"
+      ></el-image>
       <div class="product-info" slot="header">
         <span class="product-title">{{ product.name }}</span>
       </div>
@@ -35,7 +42,9 @@ const selected = computed({
         <p>{{ product.description }}</p>
         <h4 class="product-price">${{ product.price }}</h4>
       </div>
-      <el-button class="add-to-cart-button" type="primary">Agregar al carrito</el-button>
+      <el-button class="add-to-cart-button" type="primary"
+        >Agregar al carrito</el-button
+      >
     </el-card>
   </section>
 </template>
@@ -49,6 +58,7 @@ const selected = computed({
 }
 
 .product-card {
+  boxshadow: var(--el-box-shadow-dark);
   position: relative;
 }
 
