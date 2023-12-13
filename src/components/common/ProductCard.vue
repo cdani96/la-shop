@@ -27,64 +27,79 @@ const selected = computed({
 });
 </script>
 <template>
-  <section class="product-grid">
+  <div class="container">
     <el-card class="product-card" shadow="hover">
-      <el-image
-        :src="product.image"
-        loading="lazy"
-        fit="cover"
-        class="product-image"
-      ></el-image>
-      <div class="product-info" slot="header">
-        <span class="product-title">{{ product.name }}</span>
+      <div class="product-image">
+        <el-image :src="product.image" loading="lazy" fit="cover"></el-image>
       </div>
-      <div class="product-description">
-        <p>{{ product.description }}</p>
-        <h4 class="product-price">${{ product.price }}</h4>
+      <div class="product-details" slot="header">
+        <h2 class="product-title">{{ product.name }}</h2>
+        <h4 class="product-price">{{ product.price }}</h4>
+        <el-button class="add-to-cart-btn" type="primary">Agregar al carrito</el-button>
+        <el-button class="view-btn">Detalles</el-button>
       </div>
-      <el-button class="add-to-cart-button" type="primary"
-        >Agregar al carrito</el-button
-      >
     </el-card>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+.container {
+  margin: 0 auto 0 auto;
+  text-align: center;
 }
-
 .product-card {
-  boxshadow: var(--el-box-shadow-dark);
-  position: relative;
+  background-color: #fff;
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
 }
 
 .product-image {
-  height: 60vw;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.product-info {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.product-description {
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.product-price {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.product-image el-image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .product-title {
-  font-weight: bold;
-  background-color: #ffd2b7;
-  margin: 10px 0;
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
 }
+
+.product-price {
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.add-to-cart-btn,
+.view-btn {
+  background-color: cornflowerblue;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.25s ease;
+}
+
+.add-to-cart-btn:hover,
+.view-btn:hover {
+  opacity: 0.8;
+}
+
+
 </style>

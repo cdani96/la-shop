@@ -16,23 +16,24 @@ import Footer from "./components/common/Footer.vue";
 </template>
 
 <style scoped>
-el-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* el-container { */
+/*   height: 100vh; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/* } */
 
-el-header,
-el-footer {
-  color: white;
-  text-align: center;
-  /* padding: 20px; */
-}
+/* el-header, */
+/* el-footer { */
+/*   color: white; */
+/*   text-align: center; */
+/*   /* padding: 20px; */
 
-el-main {
-  flex-grow: 1;
-  overflow: auto;
-}
+/* } */
+
+/* el-main { */
+/*   flex-grow: 1; */
+/*   overflow: auto; */
+/* } */
 
 el-header {
   background-color: #ffbe98;
