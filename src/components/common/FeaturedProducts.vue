@@ -1,29 +1,32 @@
 <script setup>
 import { toRefs, watch, reactive } from "vue";
-import ProductCard from "../common/ProductCard.vue";
+import ProductCard from "../common/ProductoCard.vue";
 
 const props = defineProps({
   products: {
     type: Array,
-    required: true
+    required: true,
   },
 });
 
-const { products } = toRefs(props)
+const { products } = toRefs(props);
 
-const selectedProducts = reactive({})
+const selectedProducts = reactive({});
 
 watch(selectedProducts, (value) => {
-  console.log('Selected Products: ', value)
-})
-
+  console.log("Selected Products: ", value);
+});
 </script>
 
 <template>
   <div class="featured-products">
     <ul>
-      <ProductCard v-for="product in products" :key="product.id" :product="product"
-        v-model="selectedProducts[product.id]"></ProductCard>
+      <ProductCard
+        v-for="product in products"
+        :key="product.id"
+        :product="product"
+        v-model="selectedProducts[product.id]"
+      ></ProductCard>
     </ul>
   </div>
   <el-button type="primary" class="bottom-button">Explorar mas</el-button>
