@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   element-plus:
-    specifier: ^2.4.3
-    version: 2.4.3(vue@3.3.11)
+    specifier: ^2.4.4
+    version: 2.4.4(vue@3.3.11)
   vue:
     specifier: ^3.3.11
     version: 3.3.11
@@ -803,8 +803,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /element-plus@2.4.3(vue@3.3.11):
-    resolution: {integrity: sha512-b3q26j+lM4SBqiyzw8HybybGnP2pk4MWgrnzzzYW5qKQUgV6EG1Zg7nMCfgCVccI8tNvZoTiUHb2mFaiB9qT8w==}
+  /element-plus@2.4.4(vue@3.3.11):
+    resolution: {integrity: sha512-TlKubXJgxwhER0dw+8ULn9hr9kZjraV4R6Q/eidwWUwCKxwXYPBGmMKsZ/85tlxlhMYbcLZd/YZh6G3QkHX4fg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
